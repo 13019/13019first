@@ -1,6 +1,7 @@
 <?php
 include_once("conn.php");
 $user_name=$_POST["user_name"];
+<<<<<<< HEAD
 $user_password=md5($_POST["user_password"]);
 $user_repassword=md5($_POST["user_repassword"]);
 $user_regtime=time();
@@ -35,4 +36,11 @@ if(isset($_POST["submit"])){
 }
 		
 		
+=======
+$user_password=$_POST["user_password"];
+
+
+
+
+>>>>>>> parent of a003847... Revert "Revert "10.8中午""
 ?>
