@@ -1,7 +1,6 @@
 <?php
 include_once("conn.php");
 $user_name=$_POST["user_name"];
-<<<<<<< HEAD
 $user_password=md5($_POST["user_password"]);
 $user_repassword=md5($_POST["user_repassword"]);
 $user_regtime=time();
@@ -16,11 +15,15 @@ if($user_name){
 			echo"请正确输入邮箱";
 			} 
 	}
+//验证密码长度
+$len_user_password=strlen($user_password);
+if($len_user_password<6){
+	echo"密码长度不能小于6";
+	}
 //验证两次密码
 if($user_password<>$user_repassword){
 	echo"两次密码不一样，请从新输入";
 	}
-
 //验证用户名是否存在，不存在就插入数据；
 if(isset($_POST["submit"])){
 	$sql="select user_name from user where user_name='".$_POST['user_name']."'";
@@ -31,16 +34,10 @@ if(isset($_POST["submit"])){
 	else{
 		$sql="insert into user (user_name,user_password,user_regtime) values ('$user_name','$user_password','$user_regtime')";
 		mysql_query($sql);
-		echo"charu";
+		echo"注册成功";
 		}
 }
 		
 		
-=======
-$user_password=$_POST["user_password"];
 
-
-
-
->>>>>>> parent of a003847... Revert "Revert "10.8中午""
 ?>
