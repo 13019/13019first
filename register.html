@@ -14,7 +14,7 @@
 密码：<input type="password" class="register_password" name="user_password" value="" /><br />
 
 确认：<input type="password" class="register_repassword" name="user_repassword" value="" /><br />
-验证码：<img src="checkcode.php" alt="验证码" />看不清?
+验证码：<input type="text" class="register_code" name="user_code" value=""/><img src="checkcode.php" alt="验证码" title="看不清？点击更换"  onclick="this.src='checkcode.php?'+Math.random();"/>看不清?
 
 <input id="button" class="butt" type="submit" name='submit' value="完成注册"/>
 </form>
