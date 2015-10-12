@@ -11,7 +11,7 @@ if($_SESSION["cheeckcode"]!=$user_code){
 	echo"验证码错误，请重新输入";
 	return false;
 	}
-if(empty($usr_name)){
+if(empty($user_name)){
 	echo"请输入用户名";
 	return false;
 		}
@@ -46,14 +46,15 @@ if($user_password<>$user_repassword){
 if(isset($_POST["submit"])){
 	$sql="select user_name from user where user_name='".$_POST['user_name']."'";
 	$result=mysql_query($sql);
-	if(!empty($result)){
-		echo"用户名已经存在";
-		return false;
-		}
-	else{
+	if(isset($result)){
 		$sql="insert into user (user_name,user_password,user_regtime) values ('$user_name','$user_password','$user_regtime')";
 		mysql_query($sql);
 		echo"注册成功";
+		
+		}
+	else{
+		echo"用户名已经存在";
+		return false;
 		}
 }
 		
