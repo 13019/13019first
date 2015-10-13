@@ -12,5 +12,6 @@ $dbname=13019;
 //$tablename=persons;
 $conn = @mysql_connect($localhost.':'.$port,$hostuser,$pass) or die("coulde not connect");
 mysql_select_db("$dbname",$conn);
-mysql_query("set names 'utf8'"); 
+mysql_query("set names 'utf8'");
+//define(ALL_PS,"13019");
 ?>

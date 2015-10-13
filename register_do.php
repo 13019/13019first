@@ -44,7 +44,7 @@ if($user_password<>$user_repassword){
 	}
 //验证用户名是否存在，不存在就插入数据；
 if(isset($_POST["submit"])){
-	$sql="select user_name from user where user_name='".$_POST['user_name']."'";
+	$sql="select user_name from user where `user_name` ='$user_name'";
 	$result=mysql_query($sql);
 	if(isset($result)){
 		$sql="insert into user (user_name,user_password,user_regtime) values ('$user_name','$user_password','$user_regtime')";
