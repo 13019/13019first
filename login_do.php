@@ -15,7 +15,8 @@ if($_SESSION["cheeckcode"]==$user_code){
 	if($us){
 			if($row["user_password"]==$user_password){
 				$_SESSION[user_id]=$row[user_id];
-				$_SESSION[user_lock]=md5($row[user_id].$row[user_name]);
+				$_SESSION[user_lock]=md5($row[user_id].$row[user_name].ALL_PS);
+				$_SESSION[login_time]=mktime();
 				echo"登陆成功";
 				}else{
 					echo"输入的密码不正确";
