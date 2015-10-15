@@ -15,7 +15,6 @@ function user_login_in($user_id,$user_lock,$login_time){
        $n_time=mktime();
        if($n_time-$login_time>'360'){
            echo"登陆超时";
-           session_destroy();
             exit();
        }else{
            $_SESSION[login_time]=mktime();
@@ -26,7 +25,6 @@ function user_login_in($user_id,$user_lock,$login_time){
        exit();
    }
 }
-$arr=user_login_in($_SESSION[user_id],$_SESSION[user_lock],$_SESSION[login_time]);
+user_login_in($_SESSION[user_id],$_SESSION[user_lock],$_SESSION[login_time]);
 
 ?>
-
