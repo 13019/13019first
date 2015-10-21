@@ -1,6 +1,7 @@
 <?php
-include_once("../login_in.php");
-
+//include_once("../login_in.php");
+include_once("../conn.php");
+$user_id=$_GET["user_id"];
 function list_user_thing($user_id){
   $sql="select * from user_something where `user_id` = '$user_id'";
   $query= mysql_query($sql);
@@ -14,7 +15,6 @@ function list_user_thing($user_id){
     </div>
 </div>
 <?php
-
  }
 }
 list_user_thing($_SESSION["user_id"]);
