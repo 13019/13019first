@@ -22,10 +22,12 @@ function list_user_thing($user_id){//用户事情列表
     }
 }
 function new_do($user_id){//用户最近做的事情列表
-    $sql="select * from user_do where `user_id` = '$user_id'";
+    $sql="select * from user_do where `user_id` ='$user_id'";
     $query=mysql_query($sql);
     $row=mysql_fetch_array($query);
-    for($i=1;$i<=10;$i++){
+    $result=count($row);
+    print_r($row);
+    for($i=1;$i<=$result;$i++){
         if(strlen($row["do_text"])<100){
             $do_text=$row["do_text"];
         }else{

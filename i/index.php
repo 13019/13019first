@@ -27,6 +27,7 @@ include_once("i.class.php");
     <ul>
         <?php new_do($user_id) ?>
     </ul>
+
 </div>
 
 </body>
