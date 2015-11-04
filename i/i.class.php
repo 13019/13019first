@@ -22,12 +22,12 @@ function list_user_thing($user_id){//用户事情列表
     }
 }
 function new_do($user_id){//用户最近做的事情列表
-    $sql="select * from user_do where `user_id` ='$user_id'";
+    $sql="select * from user_something where `user_id` ='$user_id'";
     $query=mysql_query($sql);
-    $row=mysql_fetch_array($query);
-    $result=count($row);
-    print_r($row);
-    for($i=1;$i<=$result;$i++){
+   // $row=mysql_fetch_array($query);
+   // $result=count($row);
+   // print_r($row);
+    /*for($i=1;$i<=$result;$i++){
         if(strlen($row["do_text"])<100){
             $do_text=$row["do_text"];
         }else{
@@ -37,6 +37,15 @@ function new_do($user_id){//用户最近做的事情列表
         echo"<span>"."[".$row[do_time]."]"."</span>"."<span>"."[".$row["user_thing_name"]."]"."</span>";
         echo"<a href=".">";
         echo "$do_text";
+        echo "</a>";
+        echo "</li>";
+    }
+    */
+    while( $row=mysql_fetch_array($query)){
+        echo"<li>";
+        echo"<span>"."[".$row[do_time]."]"."</span>"."<span>"."[".$row["user_thing_name"]."]"."</span>";
+        echo"<a href=".">";
+        echo "$row[user_description]";
         echo "</a>";
         echo "</li>";
     }

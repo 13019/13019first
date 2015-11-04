@@ -6,7 +6,7 @@
 $localhost=localhost;
 $port=3306;
 $hostuser=root;
-$pass=root;
+$pass="";
 //
 $dbname=13019;
 //$tablename=persons;
