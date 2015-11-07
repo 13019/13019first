@@ -25,6 +25,6 @@ function user_login_in($user_id,$user_lock,$login_time){
        return $user_lock;
    }
 }
-user_login_in($_SESSION[user_id],$_SESSION[user_lock],$_SESSION[login_time]);
+
 
 ?>
