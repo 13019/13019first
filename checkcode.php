@@ -1,6 +1,6 @@
 <?php
-//验证码
 session_start();
+//验证码
 //随机4个字符，不含0和o；
 $char="abcdefghigklmnpqrstuvwxyz123456789";
 $char_len=strlen($char)-1;

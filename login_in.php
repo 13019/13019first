@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("conn.php");
+include("conn.php");
 /**
  * @param $user_id
  * @param $user_lock
@@ -15,15 +15,18 @@ function user_login_in($user_id,$user_lock,$login_time){
        $n_time=mktime();
        if($n_time-$login_time>'360'){
            echo"登陆超时";
-           session_destroy();
+           exit();
        }else{
            $_SESSION[login_time]=mktime();
-           return $user_lock;
+           return $row;
        }
-      // return $row;
    }else{
-       return $user_lock;
+       header("Location:../login.html");
+      // echo "你无权限操作";
+       exit();
+      // return $user_lock;
    }
+
 }
 
 
