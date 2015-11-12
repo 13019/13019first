@@ -15,7 +15,7 @@ $arr=user_login_in($_SESSION[user_id],$_SESSION[user_lock],$_SESSION[login_time]
 <div>
     <div>修改密码</div>
 
-    <form method="post" action="">
+    <form method="post" action="user_do.php">
        <div class=""one_password">新密码<input type="password" value="" name="one_password"> </div>
        <div class="two_password">再次输入密码:<input type="password" value="" name="two_password"></div>
 <input value="提交" type="submit">
